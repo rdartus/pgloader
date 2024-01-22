@@ -42,6 +42,8 @@ FROM debian:bookworm-slim
         make \
         sbcl \
         unzip \
+        postgresql \
+        postgresql-contrib \
       && rm -rf /var/lib/apt/lists/*
 
   COPY --from=builder /opt/src/pgloader/build/bin/pgloader /usr/local/bin
